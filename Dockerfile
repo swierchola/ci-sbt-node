@@ -24,6 +24,10 @@ RUN set -ex \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
   done
 
+RUN echo "==> fetch all sbt jars from Maven repo..."       && \
+    echo "==> [CAUTION] this may take several minutes!!!"  && \
+    sbt
+
 # Install node
 ENV NODE_VERSION 0.12.10
 
